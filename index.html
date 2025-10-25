@@ -58,17 +58,32 @@ footer { margin-top:3rem; text-align:center; font-size:0.9rem; color:#777; borde
 /* Responsive */
 @media (max-width:900px){ nav{width:220px;} main{margin-left:220px;padding:2rem 1rem;} header h1{font-size:1.6rem;} }
 @media (max-width:700px){
-  nav{
-    width:250px;
-    left:-100%;
-    padding:2rem 1rem;
-    position:fixed;  /* <-- change this line */
-    top:0;
-    bottom:0;
-    z-index:1000;
+  nav {
+    position: absolute;   /* allow scrolling */
+    top: 0;
+    left: -250px;         /* hidden off-screen to the left */
+    bottom: auto;
+    width: 250px;
+    padding: 2rem 1rem;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    background:#111;
   }
-  nav.open{left:0;}
-  .mobile-nav-toggle{display:block;}
+  nav.open { left: 0; }
+  .mobile-nav-toggle {
+    display:block;
+    position: fixed;      
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 1100;
+    background:#111;
+    padding:0.5rem 1rem;
+    border-radius:6px;
+  }
+  main {
+    margin-left:0;
+    padding:1.5rem;
+  }
 }
 </style>
 </head>
@@ -144,14 +159,13 @@ footer { margin-top:3rem; text-align:center; font-size:0.9rem; color:#777; borde
 <section id="promotions" class="tab">
 <header><h1>Promotions & Selling</h1></header>
 <div class="bullet">Advertising Restrictions - No unsolicited external advertising.</div>
-<div class="bullet">Verified Sellers Only - Complete onboarding and verification.</div>
-<div class="bullet">No DM Solicitation - Contacting members directly prohibited.</div>
+<div class="bullet">Verified Sellers Only - Complete onboarding before selling.</div>
+<div class="bullet">No DM Solicitation outside channels.</div>
 <div class="bullet">External Redirects Banned.</div>
-<div class="bullet">Giveaway & Rewards - Must be claimed within 1 hour; non-transferable.</div>
+<div class="bullet">Giveaways & Rewards - Must be claimed within 1 hour unless noted.</div>
 <div class="bullet">Affiliate & Referral Links - Pre-approved by staff.</div>
 <div class="bullet">Transparency & Disclosure - Listings must state pricing and deliverables.</div>
 <div class="bullet">Prohibited Promotions - No pyramid schemes or scams.</div>
-<div class="bullet">Compliance & Conduct - Follow Discord TOS and laws.</div>
 <a class="btn nav-btn" data-tab="server-service">NEXT → Server & Service Rules</a>
 <a class="btn nav-btn" data-tab="payment">← BACK</a>
 </section>
@@ -160,13 +174,13 @@ footer { margin-top:3rem; text-align:center; font-size:0.9rem; color:#777; borde
 <section id="server-service" class="tab">
 <header><h1>Server & Service Rules</h1></header>
 <div class="bullet">No Cloning or Copying server assets.</div>
-<div class="bullet">Service at Our Discretion - Can suspend or terminate service anytime.</div>
+<div class="bullet">Service at Our Discretion.</div>
 <div class="bullet">Zero Tolerance for Manipulation.</div>
-<div class="bullet">Impersonation & Unauthorized Access forbidden.</div>
-<div class="bullet">Security & Vulnerability Disclosure - Report privately.</div>
-<div class="bullet">Approved Bot & Automation Usage only.</div>
+<div class="bullet">Impersonation & Unauthorized Access Forbidden.</div>
+<div class="bullet">Security & Vulnerability Disclosure.</div>
+<div class="bullet">Approved Bot & Automation Usage Only.</div>
 <div class="bullet">Confidentiality of Internal Communications.</div>
-<div class="bullet">Server Termination - Slot owners have 48h to recover slot.</div>
+<div class="bullet">Server Termination - Recover your slot within 48h.</div>
 <div class="bullet">Maintenance & Downtime Notifications.</div>
 <div class="bullet">Feedback & Feature Requests.</div>
 <div class="bullet">Compliance & Enforcement.</div>
@@ -177,36 +191,41 @@ footer { margin-top:3rem; text-align:center; font-size:0.9rem; color:#777; borde
 <!-- Final Notes -->
 <section id="final-notes" class="tab">
 <header><h1>Final Notes</h1></header>
-<p>All users must follow these terms. Failure to comply may result in warnings, suspensions, or bans. Rules may be updated with 24-hour notice.</p>
-<a class="btn nav-btn" data-tab="r-c">← BACK</a>
-</section>
-
-<!-- Slot Terms -->
-<section id="promotions-pings" class="tab">
-<header><h1>Promotions, Pings & Selling</h1></header>
-<div class="bullet">No External Advertising - Outside approved servers forbidden.</div>
-<div class="bullet">Verified Sellers Only - Must have verified slot holder status.</div>
-<div class="bullet">No DM Solicitation or Diversion.</div>
-<div class="bullet">Daily Ping Allowances - Reset daily at 00:00 BST.</div>
-<a class="btn nav-btn" data-tab="general-terms">NEXT → General Terms</a>
+<div class="bullet">All users must follow these rules to maintain access.</div>
+<div class="bullet">Staff decisions are final regarding enforcement.</div>
+<a class="btn nav-btn" data-tab="promotions-pings">NEXT → Promotions, Pings & Selling</a>
 <a class="btn nav-btn" data-tab="server-service">← BACK</a>
 </section>
 
+<!-- Promotions, Pings & Selling -->
+<section id="promotions-pings" class="tab">
+<header><h1>Promotions, Pings & Selling Policy</h1></header>
+<div class="bullet">No External Advertising.</div>
+<div class="bullet">Verified Sellers Only.</div>
+<div class="bullet">No DM Solicitation or Diversion.</div>
+<div class="bullet">Daily Ping Allowances reset at 00:00 GMT.</div>
+<a class="btn nav-btn" data-tab="general-terms">NEXT → General Terms</a>
+<a class="btn nav-btn" data-tab="final-notes">← BACK</a>
+</section>
+
+<!-- General Terms -->
 <section id="general-terms" class="tab">
 <header><h1>General Terms</h1></header>
-<div class="bullet">Non-transferable Slots - Cannot sell or gift your slot.</div>
+<div class="bullet">Non-transferable Slots.</div>
 <div class="bullet">No Alternate Accounts.</div>
 <div class="bullet">Blacklist Restriction.</div>
-<div class="bullet">Final Payments - All fees are final.</div>
-<div class="bullet">Underpayment Policy - Slot suspended until balance cleared.</div>
-<div class="bullet">Rejoin Requirement - Exiting without rejoining in 48h forfeits slot.</div>
+<div class="bullet">Final Payments are absolute.</div>
+<div class="bullet">Underpayment Policy applies.</div>
+<div class="bullet">Rejoin Requirement - 48h.</div>
+<div class="bullet">Enforcement & Penalties - Staff authority applies.</div>
 <a class="btn nav-btn" data-tab="slot-guidelines">NEXT → Slot Management Guidelines</a>
 <a class="btn nav-btn" data-tab="promotions-pings">← BACK</a>
 </section>
 
+<!-- Slot Management Guidelines -->
 <section id="slot-guidelines" class="tab">
 <header><h1>Slot Management Guidelines</h1></header>
-<div class="bullet">Middleman Usage required for all transactions.</div>
+<div class="bullet">Middleman usage required for all transactions.</div>
 <div class="bullet">Anti-Scam & Blacklists - Zero tolerance.</div>
 <div class="bullet">Reports & Investigations - Respond within 12 hours.</div>
 <div class="bullet">Advertising & Redirects - Only approved links and previews allowed.</div>
@@ -220,7 +239,7 @@ footer { margin-top:3rem; text-align:center; font-size:0.9rem; color:#777; borde
 <a class="btn nav-btn" data-tab="general-terms">← BACK</a>
 </section>
 
-<!-- Other Terms -->
+<!-- Partnership Terms & Conditions -->
 <section id="partnership" class="tab">
 <header><h1>Partnership Terms & Conditions</h1></header>
 <div class="bullet">Partnership agreements must be approved by staff.</div>
@@ -229,6 +248,7 @@ footer { margin-top:3rem; text-align:center; font-size:0.9rem; color:#777; borde
 <a class="btn nav-btn" data-tab="slot-guidelines">← BACK</a>
 </section>
 
+<!-- External Terms -->
 <section id="external" class="tab">
 <header><h1>External Terms</h1></header>
 <div class="bullet">All external services used must comply with Ghost Slots policies.</div>
@@ -237,6 +257,7 @@ footer { margin-top:3rem; text-align:center; font-size:0.9rem; color:#777; borde
 <a class="btn nav-btn" data-tab="partnership">← BACK</a>
 </section>
 
+<!-- Punishment & Violation -->
 <section id="punishment" class="tab">
 <header><h1>Punishment & Violation</h1></header>
 <ul class="numbered">
