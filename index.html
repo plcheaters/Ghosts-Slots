@@ -58,14 +58,17 @@ footer { margin-top:3rem; text-align:center; font-size:0.9rem; color:#777; borde
 /* Responsive */
 @media (max-width:900px){ nav{width:220px;} main{margin-left:220px;padding:2rem 1rem;} header h1{font-size:1.6rem;} }
 @media (max-width:700px){
-  nav{width:250px; left:-100%; padding:2rem 1rem; position:fixed; top:0; bottom:0; z-index:1000;}
+  nav{
+    width:250px;
+    left:-100%;
+    padding:2rem 1rem;
+    position:fixed;  /* <-- change this line */
+    top:0;
+    bottom:0;
+    z-index:1000;
+  }
   nav.open{left:0;}
   .mobile-nav-toggle{display:block;}
-  main{margin-left:0;padding:1.5rem;}
-  .content-wrapper{max-width:100%;}
-  .logo{font-size:1rem;margin-bottom:1rem;}
-  nav li a{font-size:0.85rem;text-align:left;}
-  .btn{padding:0.8rem 1.5rem; font-size:1rem;}
 }
 </style>
 </head>
@@ -288,4 +291,3 @@ history.replaceState({tab:"r-c"},"","#r-c");
 
 </body>
 </html>
-
