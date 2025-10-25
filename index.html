@@ -10,7 +10,7 @@ body { font-family:"Inter","Segoe UI",sans-serif; background:#0f0f10; color:#e5e
 a { text-decoration:none; color:#9ca3af; cursor:pointer; transition:0.2s; }
 a:hover { color:#fff; }
 
-/* side */
+/* Sidebar */
 nav { width:300px; background:#111; padding:2rem 1.2rem; display:flex; flex-direction:column; gap:1rem; border-right:1px solid #222; position:fixed; top:0; bottom:0; left:0; overflow-y:auto; transition:left 0.3s ease; z-index:1000; }
 nav ul { list-style:none; }
 nav li { margin:0.4rem 0; }
@@ -20,17 +20,17 @@ nav li ul { margin-left:1rem; margin-top:0.3rem; display:none; }
 nav li.open > ul { display:block; }
 .category-toggle { font-weight:bold; color:#fff; cursor:pointer; display:block; padding:0.5rem 0.75rem; border-radius:6px; }
 
-/* logo */
+/* Logo */
 .logo { font-size:1.6rem; font-weight:bold; color:#fff; text-align:center; margin-bottom:1.5rem; }
 
-/* mobile */
+/* Mobile Toggle */
 .mobile-nav-toggle { display:none; font-size:1.8rem; cursor:pointer; color:#fff; position:fixed; top:0.5rem; left:0.5rem; z-index:1100; background:#111; padding:0.5rem 1rem; border-radius:6px; }
 
-/* lay */
+/* Main Layout */
 main { flex:1; margin-left:300px; display:flex; flex-direction:column; align-items:center; padding:3rem 2rem; transition:margin-left 0.3s ease; }
 .content-wrapper { max-width:900px; width:100%; text-align:left; }
 
-/* tab */
+/* Tabs */
 .tab { display:none; opacity:0; transform:translateY(10px); transition: all 0.4s ease; }
 .tab.active { display:block; opacity:1; transform:translateY(0); }
 
@@ -55,30 +55,34 @@ header p { color:#aaa; margin-bottom:1rem; }
 
 footer { margin-top:3rem; text-align:center; font-size:0.9rem; color:#777; border-top:1px solid #222; padding-top:1rem; }
 
-/* resp */
+/* Responsive */
 @media (max-width:900px){ nav{width:220px;} main{margin-left:220px;padding:2rem 1rem;} header h1{font-size:1.6rem;} }
+
 @media (max-width:700px){
   nav {
-    position: absolute;   /* allow scrolling */
+    position: fixed; 
     top: 0;
-    left: -250px;         /* hidden off-screen to the left */
-    bottom: auto;
+    left: -250px; 
     width: 250px;
+    height: 100%;
     padding: 2rem 1rem;
+    background: #111;
     transition: left 0.3s ease;
     z-index: 1000;
-    background:#111;
+    overflow-y: auto;
   }
-  nav.open { left: 0; }
+  nav.open { left:0; }
   .mobile-nav-toggle {
     display:block;
-    position: fixed;      
-    top: 0.5rem;
-    left: 0.5rem;
-    z-index: 1100;
+    position: fixed;
+    top:0.5rem;
+    left:0.5rem;
+    z-index:1100;
     background:#111;
     padding:0.5rem 1rem;
     border-radius:6px;
+    font-size:1.5rem;
+    cursor:pointer;
   }
   main {
     margin-left:0;
@@ -89,10 +93,10 @@ footer { margin-top:3rem; text-align:center; font-size:0.9rem; color:#777; borde
 </head>
 <body>
 
-<!-- side bars how -->
+<!-- Mobile toggle button -->
 <div class="mobile-nav-toggle">☰</div>
 
-<!-- side -->
+<!-- Sidebar -->
 <nav>
   <div class="logo">👻 Ghost Slots</div>
   <ul>
@@ -158,11 +162,11 @@ footer { margin-top:3rem; text-align:center; font-size:0.9rem; color:#777; borde
 <!-- Promotions & Selling -->
 <section id="promotions" class="tab">
 <header><h1>Promotions & Selling</h1></header>
-<div class="bullet">Advertising Restrictions - No unsolicited external advertising.</div>
-<div class="bullet">Verified Sellers Only - Complete onboarding before selling.</div>
+<div class="bullet">No unsolicited advertising outside approved channels.</div>
+<div class="bullet">Verified Sellers Only - Complete onboarding first.</div>
 <div class="bullet">No DM Solicitation outside channels.</div>
 <div class="bullet">External Redirects Banned.</div>
-<div class="bullet">Giveaways & Rewards - Must be claimed within 1 hour unless noted.</div>
+<div class="bullet">Giveaways & Rewards - Must be claimed within 1 hour.</div>
 <div class="bullet">Affiliate & Referral Links - Pre-approved by staff.</div>
 <div class="bullet">Transparency & Disclosure - Listings must state pricing and deliverables.</div>
 <div class="bullet">Prohibited Promotions - No pyramid schemes or scams.</div>
@@ -217,7 +221,6 @@ footer { margin-top:3rem; text-align:center; font-size:0.9rem; color:#777; borde
 <div class="bullet">Final Payments are absolute.</div>
 <div class="bullet">Underpayment Policy applies.</div>
 <div class="bullet">Rejoin Requirement - 48h.</div>
-<div class="bullet">Enforcement & Penalties - Staff authority applies.</div>
 <a class="btn nav-btn" data-tab="slot-guidelines">NEXT → Slot Management Guidelines</a>
 <a class="btn nav-btn" data-tab="promotions-pings">← BACK</a>
 </section>
