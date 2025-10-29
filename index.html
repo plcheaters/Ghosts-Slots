@@ -29,7 +29,6 @@ nav li.open > ul { display:block; }
 .logo { font-size:1.6rem; font-weight:bold; color:#fff; text-align:center; margin-bottom:1.5rem; display:flex; align-items:center; justify-content:center; }
 .logo-img { width:32px; height:32px; margin-right:.5rem; }
 
-/* ---------- MOBILE HAMBURGER (REAL 3 LINES) ---------- */
 .mobile-nav-toggle {
   display: none;
   position: fixed;
@@ -86,14 +85,13 @@ footer { margin-top:3rem; text-align:center; font-size:.9rem; color:#777; border
 @media (max-width:700px){
   nav { position:fixed; top:0; left:-50%; width:50%; height:100%; padding:2rem 1rem; background:#111; transition:left .3s ease; z-index:1000; overflow-y:auto; }
   nav.open { left:0; }
-  .mobile-nav-toggle { display:flex !important; } /* Force show on mobile */
+  .mobile-nav-toggle { display:flex !important; }
   main { margin-left:0; padding:1.5rem; }
 }
 </style>
 </head>
 <body>
 
-<!-- PURE CSS HAMBURGER (3 LINES) -->
 <div class="mobile-nav-toggle">
   <span></span>
   <span></span>
