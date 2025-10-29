@@ -29,8 +29,32 @@ nav li.open > ul { display:block; }
 .logo { font-size:1.6rem; font-weight:bold; color:#fff; text-align:center; margin-bottom:1.5rem; display:flex; align-items:center; justify-content:center; }
 .logo-img { width:32px; height:32px; margin-right:.5rem; }
 
-/* ---------- mobile ---------- */
-.mobile-nav-toggle { display:none; font-size:1.8rem; cursor:pointer; color:#fff; position:fixed; top:.5rem; left:.5rem; z-index:1100; background:#111; padding:.5rem 1rem; border-radius:6px; }
+/* ---------- MOBILE HAMBURGER (REAL 3 LINES) ---------- */
+.mobile-nav-toggle {
+  display: none;
+  position: fixed;
+  top: .5rem;
+  left: .5rem;
+  width: 48px;
+  height: 48px;
+  background: #111;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1100;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+.mobile-nav-toggle span {
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  border-radius: 1px;
+  transition: 0.3s;
+}
+.mobile-nav-toggle span:nth-child(1),
+.mobile-nav-toggle span:nth-child(3) { width: 18px; }
 
 /* layout */
 main { flex:1; margin-left:300px; display:flex; flex-direction:column; align-items:center; padding:3rem 2rem; transition:margin-left .3s ease; }
@@ -62,15 +86,21 @@ footer { margin-top:3rem; text-align:center; font-size:.9rem; color:#777; border
 @media (max-width:700px){
   nav { position:fixed; top:0; left:-50%; width:50%; height:100%; padding:2rem 1rem; background:#111; transition:left .3s ease; z-index:1000; overflow-y:auto; }
   nav.open { left:0; }
-  .mobile-nav-toggle { display:block; }
+  .mobile-nav-toggle { display:flex !important; } /* Force show on mobile */
   main { margin-left:0; padding:1.5rem; }
 }
 </style>
 </head>
 <body>
 
-<!-- Hamburger menu (mobile) -->
-<div class="mobile-nav-toggle"><span></span></div><nav>
+<!-- PURE CSS HAMBURGER (3 LINES) -->
+<div class="mobile-nav-toggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<nav>
   <div class="logo">
     <img src="assets/ghost.png" alt="Ghost Slots Logo" class="logo-img">
     Ghost Slots
@@ -116,7 +146,7 @@ footer { margin-top:3rem; text-align:center; font-size:.9rem; color:#777; border
 <p>We launched on October 12, 2025, as a truly cross‑platform marketplace dedicated to helping creators and entrepreneurs sell digital products with confidence. Built on a foundation of security and transparency, our platform ensures every trade between buyer and seller is protected from start to finish.</p>
 <p>While Discord remains our flagship channel, Ghost’s Slots modular architecture lets us integrate with multiple platforms—so you can reach customers wherever they are. With rapid growth and continuous innovation, we’re not just another single‑channel marketplace; we’re redefining how digital goods are discovered, bought, and sold across the entire online ecosystem.</p>
 <p><strong>We offer a diverse lineup of flexible plans—each one crafted to empower you to list, market, and sell your digital products seamlessly on our platform :</strong></p>
-<p class="shadow-text"><strong>By joining our server you automatically agree to the server rules and by buying a slot you automatically agree to the slot terms.</strong></p большое>
+<p class="shadow-text"><strong>By joining our server you automatically agree to the server rules and by buying a slot you automatically agree to the slot terms.</strong></p>
 <a class="btn nav-btn" data-tab="r-c">NEXT to Respect & Conduct</a>
 </section>
 
@@ -151,53 +181,42 @@ footer { margin-top:3rem; text-align:center; font-size:.9rem; color:#777; border
 <a class="btn nav-btn" data-tab="r-c">Back</a>
 </section>
 
-<!-- PROMOTIONS & SELLING (SERVER RULES) -->
+<!-- PROMOTIONS & SELLING -->
 <section id="promotions" class="tab">
 <header><h1>Promotions & Selling</h1></header>
-
 <div class="category">Advertising Restrictions</div>
 <div class="bullet">No unsolicited advertising on other Discord servers, Telegram channels, social media, or any external site via our server channels.</div>
 <div class="bullet">Do not post invite links, referral codes, or promotional banners in our server channels.</div>
 <div class="bullet">Spamming mass‑mentions or @everyone/@here for promotions is strictly prohibited.</div>
-
 <div class="category">Verified Sellers Only</div>
 <div class="bullet">Only users with a verified “slot holder” status may offer services or list products for sale.</div>
 <div class="bullet">To become verified, complete our onboarding and identity‑verification process.</div>
-
 <div class="category">No DM‑Based Solicitation</div>
 <div class="bullet">Directly messaging members to pitch services, divert tickets, or funnel users to external platforms is forbidden.</div>
 <div class="bullet">All offers must be made in the designated slot channels only.</div>
-
 <div class="category">External Redirects Banned</div>
 <div class="bullet">You may not redirect users to your own Discord server, Telegram, website, or any other third‑party platform for sales or support.</div>
 <div class="bullet">Violations will lead to immediate suspension of selling privileges and potential server ban.</div>
-
 <div class="category">Giveaway & Rewards</div>
 <div class="bullet"><strong>Giveaway Rewards:</strong> All giveaway rewards for events must be claimed within one hour of the event's conclusion, unless the host decides otherwise.</div>
 <div class="bullet"><strong>Non‑Transferable Rewards:</strong> Rewards are strictly non‑transferable and cannot be exchanged, redeemed for cash, or assigned to any other individual.</div>
 <div class="bullet"><strong>Requirements:</strong> Rewards are only given if the requirements are fulfilled (may be specified during or after the giveaway).</div>
 <div class="bullet"><strong>Eligibility Verification:</strong> Participants must provide valid proof of eligibility; failure may result in disqualification.</div>
-
 <div class="category">Affiliate & Referral Links</div>
 <div class="bullet">Affiliate or referral links are only allowed if pre‑approved by staff and confined to the affiliate‑program channel.</div>
 <div class="bullet">Any undisclosed or deceptive use of referral links will result in penalties.</div>
-
 <div class="category">Transparency & Disclosure</div>
 <div class="bullet">All listings must clearly state pricing, deliverables, and any additional fees up front.</div>
 <div class="bullet">Your terms of service should not contradict your advertisement (e.g., selling a 30‑day product with a 7‑day warranty is not allowed).</div>
-
 <div class="category">Prohibited Promotions</div>
 <div class="bullet">No pyramid schemes, MLM solicitations, or get‑rich‑quick scams.</div>
 <div class="bullet">Illegal content—pirated software, unauthorized copyrighted material, or illicit services—is strictly forbidden.</div>
-
 <div class="category">Compliance & Conduct</div>
 <div class="bullet">Adhere to Discord’s Terms of Service and all applicable laws in your promotions.</div>
 <div class="bullet">Harassment, threats, or intimidation used to coerce sales or persuade users is zero‑tolerance.</div>
-
 <div class="category">Consequences</div>
 <div class="bullet">First offense: formal warning and temporary mute from promotion channels.</div>
 <div class="bullet">Repeat violations: loss of verification, removal of selling privileges, and permanent ban.</div>
-
 <a class="btn nav-btn" data-tab="server-service">NEXT to Server & Service Rules</a>
 <a class="btn nav-btn" data-tab="payment">Back</a>
 </section>
@@ -205,48 +224,36 @@ footer { margin-top:3rem; text-align:center; font-size:.9rem; color:#777; border
 <!-- SERVER & SERVICE RULES -->
 <section id="server-service" class="tab">
 <header><h1>Server & Service Rules</h1></header>
-
 <div class="category">No Cloning or Copying</div>
 <div class="bullet">Replicating any aspect of our server—its UI/UX design, bot commands, message formatting, emojis, or terminology—is prohibited.</div>
 <div class="bullet">Offenders will be permanently banned and publicly exposed.</div>
-
 <div class="category">Service at Our Discretion</div>
 <div class="bullet">We reserve the absolute right to refuse, suspend, or terminate service to any user at any time, without explanation or prior notice.</div>
-
 <div class="category">Zero Tolerance for Manipulation</div>
 <div class="bullet">Any attempt to bait, manipulate, or deceive staff—including false reports, staged disputes, or “drama bait”—will result in immediate loss of access and a permanent ban.</div>
-
 <div class="category">Impersonation & Unauthorized Access</div>
 <div class="bullet">Impersonating staff, admins, bots, or other users is strictly forbidden.</div>
 <div class="bullet">Do not share or misuse permissioned commands, audit logs, or private channels. Violations incur immediate suspension.</div>
-
 <div class="category">Security & Vulnerability Disclosure</div>
 <div class="bullet">If you discover a security flaw or bug, report it privately via a support ticket.</div>
 <div class="bullet">Public disclosure, exploit attempts, or proof‑of‑concept demos without authorization will lead to legal action.</div>
-
 <div class="category">Approved Bot & Automation Usage</div>
 <div class="bullet">Only staff‑approved bots and integrations may be added or used.</div>
 <div class="bullet">Scripting, auto‑clickers, or scraping tools are prohibited and will be removed along with their operators.</div>
-
 <div class="category">Confidentiality of Internal Communications</div>
 <div class="bullet">Do not share screenshots, transcripts, download links, or any private discussions outside the server without explicit staff approval.</div>
 <div class="bullet">Breaches will face disciplinary measures.</div>
-
 <div class="category">Server Termination</div>
 <div class="bullet">If our server gets termed, all slot owners have a maximum of 48 hours to join back and recover their slot, otherwise the slot is lost and will not be returned until a new purchase.</div>
-
 <div class="category">Maintenance & Downtime Notifications</div>
 <div class="bullet">Scheduled maintenance windows, downtime, or updates will be announced in advance.</div>
 <div class="bullet">Do not DM staff for status updates—refer to #announcements for real‑time information.</div>
-
 <div class="category">Feedback & Feature Requests</div>
 <div class="bullet">Submit all feedback, suggestions, or bug reports through the #feedback channel or via our support ticket system.</div>
 <div class="bullet">Public bickering over platform decisions is discouraged.</div>
-
 <div class="category">Compliance & Enforcement</div>
 <div class="bullet">All users must abide by these rules, as well as Discord’s Terms of Service and our Privacy Policy.</div>
 <div class="bullet">Repeated or severe infractions may result in warnings, mutes, temporary suspensions, or permanent bans.</div>
-
 <a class="btn nav-btn" data-tab="final-notes">NEXT to Final Notes</a>
 <a class="btn nav-btn" data-tab="promotions">Back</a>
 </section>
@@ -254,7 +261,6 @@ footer { margin-top:3rem; text-align:center; font-size:.9rem; color:#777; border
 <!-- FINAL NOTES -->
 <section id="final-notes" class="tab">
 <header><h1>Final Notes</h1></header>
-
 <div class="category">General Usage</div>
 <div class="bullet"><strong>Non‑transferable Slots:</strong> You may not sell, gift, or assign your slot to anyone else.</div>
 <div class="bullet"><strong>No Alternate Accounts:</strong> Creating or using “alt” accounts to acquire extra slots or evade bans is forbidden.</div>
@@ -262,26 +268,21 @@ footer { margin-top:3rem; text-align:center; font-size:.9rem; color:#777; border
 <div class="bullet"><strong>Final Payments:</strong> All slot fees are final—no refunds under any circumstance.</div>
 <div class="bullet"><strong>Underpayment Policy:</strong> Slots will be adjusted proportionally to the amount paid and remain suspended until any outstanding balance is cleared.</div>
 <div class="bullet"><strong>Rejoin Requirement:</strong> Exiting the server without rejoining within 48 hours automatically forfeits your slot.</div>
-
 <div class="category">Enforcement & Penalties</div>
 <div class="bullet"><strong>Possible Sanctions:</strong> Slot revocation, monetary fines, downgrades, temporary suspensions, blacklisting from Ghost Slots and its affiliates.</div>
 <div class="bullet"><strong>Staff Authority:</strong> Staff may impose any penalty—without notice or explanation—on users exhibiting suspicious, abusive, or rule‑breaking behavior.</div>
-
 <div class="category">Deal Terms & Middleman (MM) Usage</div>
 <div class="bullet"><strong>MM Always Available:</strong> Buyers may request a middleman for any transaction; sellers must comply.</div>
 <div class="bullet"><strong>No Exemptions:</strong> “Auto‑buy only” or low‑value excuses are not valid reasons to skip MM.</div>
 <div class="bullet"><strong>Immediate Penalties:</strong> Refusing Ghost Slots’s Auto MM or ScammerAlert service incurs instant sanctions.</div>
-
 <div class="category">Anti‑Scam & Blacklists</div>
 <div class="bullet"><strong>Zero Tolerance:</strong> Scamming or collaborating with scammers results in immediate slot revocation.</div>
 <div class="bullet"><strong>Affiliate Enforcement:</strong> Being flagged “Deal With Caution” or banned in a trusted affiliate server can cost you your slot—regardless of dispute resolution.</div>
 <div class="bullet"><strong>Overstocking & Misadvertising:</strong> Overproducing, overselling, misadvertising, or listing more keys than you have in stock is strictly prohibited. Any such activity may result in immediate slot revocation without warning.</div>
-
 <div class="category">Reports & Investigations</div>
 <div class="bullet"><strong>Report Freeze:</strong> Any open report will suspend your slot’s visibility and activity.</div>
 <div class="bullet"><strong>12‑Hour Response:</strong> You have 12 hours to address a report; failure to respond triggers automatic slot revocation.</div>
 <div class="bullet"><strong>Multiple Reports Risk:</strong> Accumulating three valid reports—even if overturned later—puts your slot at risk of removal.</div>
-
 <a class="btn nav-btn" data-tab="promotions-pings">NEXT to Slot Terms to Promotions, Pings & Selling</a>
 <a class="btn nav-btn" data-tab="server-service">Back</a>
 </section>
@@ -290,51 +291,42 @@ footer { margin-top:3rem; text-align:center; font-size:.9rem; color:#777; border
 
 <section id="promotions-pings" class="tab">
 <header><h1>Promotions, Pings & Selling (Slot Terms)</h1></header>
-
 <div class="category">Advertising & Redirects</div>
 <div class="bullet">No Unsolicited DM Promotions: Pitching services via direct messages or steering users to external servers (Discord, Telegram, websites) is strictly prohibited.</div>
 <div class="bullet">Server Invite Sharing: You may only share your server link when a buyer explicitly requests it—no proactive posting.</div>
 <div class="bullet">Clean Previews: Remove or blur all external links in your product samples.</div>
 <div class="bullet">Honest Content: Present only original, approved material; using stolen, AI‑generated, or deceptive previews without clear disclosure is forbidden.</div>
-
 <div class="category">Autobuy Policy</div>
 <div class="bullet">Instant Fulfillment: All autobuy integrations must guarantee immediate delivery upon purchase.</div>
 <div class="bullet">No Stock Misrepresentation: Claims like “DM to receive” or bait‑and‑switch tactics are strictly banned.</div>
 <div class="bullet">Accurate Listings: Any false availability or misleading previews will result in immediate slot revocation.</div>
-
 <div class="category">Ping & Activity Rules</div>
 <div class="bullet">Daily Reset: Ping allowances reset each day at 12 AM GMT.</div>
 <div class="bullet">Respect Your Limits: Exceeding your ping quota or misusing mentions (e.g., @everyone/@here) triggers automatic restrictions.</div>
 <div class="bullet">No Spamming: Flooding channels with duplicate messages or remaining inactive for more than 3 days without valid reason risks slot loss.</div>
 <div class="bullet">Inactivity: Staying inactive on your slot for 7 days means direct revoke of your slot.</div>
-
 <a class="btn nav-btn" data-tab="general-terms">NEXT to General Terms</a>
 <a class="btn nav-btn" data-tab="final-notes">Back</a>
 </section>
 
 <section id="general-terms" class="tab">
 <header><h1>General Terms (Slot)</h1></header>
-
 <div class="category">Transparency & Quality</div>
 <div class="bullet">Clear Listings: Disclose all product details, pricing, and deliverables up front.</div>
 <div class="bullet">No False Advertising: Upselling tactics or misleading claims are not allowed.</div>
 <div class="bullet">Proof Retention: Keep records of all transactions (e.g., ticket transcripts) for verification.</div>
-
 <div class="category">Final Provisions</div>
 <div class="bullet">Binding Agreement: Purchasing a slot signifies your acceptance of these guidelines.</div>
 <div class="bullet">Rule Updates: These rules may change at any time; major revisions may include a 24‑hour grace period.</div>
 <div class="bullet">Final Authority: All staff decisions regarding placement, enforcement, or revocation are conclusive and not subject to external appeal.</div>
-
 <a class="btn nav-btn" data-tab="slot-guidelines">NEXT to Slot Management Guidelines</a>
 <a class="btn nav-btn" data-tab="promotions-pings">Back</a>
 </section>
 
 <section id="slot-guidelines" class="tab">
 <header><h1>Slot Management Guidelines</h1></header>
-
 <div class="category">Slot Positioning</div>
 <div class="bullet">Dynamic Placement: Higher‑tier slots receive more prominent placement, but all positions remain subject to change at staff discretion.</div>
-
 <div class="category">Slot Recovery & Migration</div>
 <div class="bullet">Rejoin Window: After any migration, you must rejoin via our backup link within 7 days or your slot will be revoked.</div>
 <div class="bullet">Transfer Requirements: To transfer a slot, submit either your original TicketTool transcript or your unique slot recovery key.</div>
@@ -344,7 +336,6 @@ footer { margin-top:3rem; text-align:center; font-size:.9rem; color:#777; border
   • $10 for positioned/Category 1 slots<br>
   • $2 (weekly) / $3 (monthly) key loss fee applies respectively
 </div>
-
 <a class="btn nav-btn" data-tab="partnership">NEXT to Partnership Terms</a>
 <a class="btn nav-btn" data-tab="general-terms">Back</a>
 </section>
@@ -369,40 +360,31 @@ footer { margin-top:3rem; text-align:center; font-size:.9rem; color:#777; border
 
 <section id="punishment" class="tab">
 <header><h1>Punishment & Violation</h1></header>
-
 <div class="category">Verbal Warning</div>
 <div class="bullet">Issued for first‑time or minor infractions (e.g., off‑topic posts, minor etiquette slips).</div>
-
 <div class="category">Temporary Restrictions</div>
 <div class="bullet">Mute from chat channels or loss of posting privileges for 24–72 hours for repeated minor offenses or medium‑severity breaches (e.g., unsolicited DMs, light spam).</div>
-
 <div class="category">Suspension</div>
 <div class="bullet">Temporary ban from the server (3–7 days) for serious rule violations, including:</div>
 <div class="bullet">• Continued harassment or toxic behavior after warning</div>
 <div class="bullet">• Attempting to manipulate staff or game the dispute process</div>
 <div class="bullet">• Unauthorized copying or cloning of server assets</div>
-
 <div class="category">Permanent Ban</div>
 <div class="bullet">Immediate, irrevocable removal for the most severe offenses, such as:</div>
 <div class="bullet">• Doxxing, threats of hacking, or leaking private information</div>
 <div class="bullet">• Fraudulent chargebacks, payment disputes, or financial scams</div>
 <div class="bullet">• Impersonation of staff, admins, or bots</div>
 <div class="bullet">• Public exposure of internal discussions or audit logs</div>
-
 <div class="category">Blacklist from Marketplace</div>
 <div class="bullet">Loss of all selling privileges, escrow access, and promotional rights.</div>
 <div class="bullet">Blacklisted users cannot create new listings or participate in transactions.</div>
-
 <div class="category">Escalation & Legal Referral</div>
 <div class="bullet">Cases involving illegal activities (e.g., distributing malware, facilitating illicit trade, severe harassment) will be documented and referred to law enforcement or payment networks as required.</div>
-
 <div class="category">Public Disclosure</div>
 <div class="bullet">In instances of major fraud or repeated violations, the offender’s username and offense summary may be posted in the server’s #offenses log for community awareness.</div>
-
 <div class="category">Appeals Process</div>
 <div class="bullet">If you believe a punishment was issued in error, submit an appeal via a support ticket within 24 hours.</div>
 <div class="bullet">Appeals will be reviewed by senior staff; decisions are final.</div>
-
 <a class="btn nav-btn" data-tab="welcome">Back to Start</a>
 </section>
 
