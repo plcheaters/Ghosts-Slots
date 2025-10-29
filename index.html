@@ -9,7 +9,6 @@
 body { font-family:"Inter","Segoe UI",sans-serif; background:#0f0f10; color:#e5e5e5; display:flex; min-height:100vh; overflow-x:hidden; }
 a { text-decoration:none; color:#9ca3af; cursor:pointer; transition:0.2s; }
 a:hover { color:#fff; }
-
 /* side */
 nav { width:300px; background:#111; padding:2rem 1.2rem; display:flex; flex-direction:column; gap:1rem; border-right:1px solid #222; position:fixed; top:0; bottom:0; left:0; overflow-y:auto; transition:left 0.3s ease; z-index:1000; }
 nav ul { list-style:none; }
@@ -19,34 +18,26 @@ nav li a.active, nav li a:hover { background:#1a1a1d; color:#fff; }
 nav li ul { margin-left:1rem; margin-top:0.3rem; display:none; }
 nav li.open > ul { display:block; }
 .category-toggle { font-weight:bold; color:#fff; cursor:pointer; display:block; padding:0.5rem 0.75rem; border-radius:6px; }
-
 /* logo */
 .logo { font-size:1.6rem; font-weight:bold; color:#fff; text-align:center; margin-bottom:1.5rem; display:flex; align-items:center; justify-content:center; }
 .logo-img { width:32px; height:32px; vertical-align:middle; margin-right:0.5rem; }
-
 /* mobile */
 .mobile-nav-toggle { display:none; font-size:1.8rem; cursor:pointer; color:#fff; position:fixed; top:0.5rem; left:0.5rem; z-index:1100; background:#111; padding:0.5rem 1rem; border-radius:6px; }
-
 /* layout */
 main { flex:1; margin-left:300px; display:flex; flex-direction:column; align-items:center; padding:3rem 2rem; transition:margin-left 0.3s ease; }
 .content-wrapper { max-width:900px; width:100%; text-align:left; }
-
 /* tab */
 .tab { display:none; opacity:0; transform:translateY(10px); transition: all 0.4s ease; }
 .tab.active { display:block; opacity:1; transform:translateY(0); }
-
 header { margin-bottom:1.5rem; }
 header h1 { font-size:2rem; color:#fff; margin-bottom:0.5rem; }
 header p { color:#aaa; margin-bottom:1rem; }
-
 /* shadow text and itatlic */
 p, .bullet, .shadow-text { margin-bottom:1.5rem; line-height:1.6; }
 .shadow-text { color:#555; font-style:italic; }
-
 /* search */
 .search-bar { margin-bottom:1.5rem; width:100%; }
 .search-bar input { width:100%; padding:0.6rem 1rem; border:none; border-radius:6px; background:#1a1a1d; color:#e5e5e5; font-size:1rem; outline:none; }
-
 /* styles */
 .category { font-weight:bold; color:#fff; margin-top:2rem; margin-bottom:1rem; font-size:1.2rem; }
 .bullet { position:relative; padding-left:1.6rem; margin-bottom:1.5rem; line-height:1.6; }
@@ -54,18 +45,14 @@ p, .bullet, .shadow-text { margin-bottom:1.5rem; line-height:1.6; }
 .numbered { counter-reset:item; padding-left:0; margin-bottom:1.5rem; }
 .numbered li { list-style:none; counter-increment:item; margin-bottom:1.5rem; padding-left:2rem; position:relative; }
 .numbered li:before { content:counter(item) ". "; position:absolute; left:0; color:#9ca3af; font-weight:bold; }
-
-.btn { display:inline-block; background:#3b82f6; color:#fff; padding:0.6rem 1.2rem; border-radius:6px; text-decoration:none; margin-top:1rem; transition:0.2s; }
+.btn { display:inline-block; background:#3b82f6; color:#fff; padding:0.6rem 1.2rem; border-radius:6px; text-decoration:none; margin-top:1rem; transition:0.2s; margin-right:0.5rem; }
 .btn:hover { background:#1e40af; }
-
 footer { margin-top:3rem; text-align:center; font-size:0.9rem; color:#777; border-top:1px solid #222; padding-top:1rem; }
-
 /* respon */
 @media (max-width:900px){ nav{width:220px;} main{margin-left:220px;padding:2rem 1rem;} header h1{font-size:1.6rem;} }
-
 @media (max-width:700px){
   nav {
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: -50%; /* hidden initially */
     width: 50%; /* half the screen */
@@ -77,7 +64,6 @@ footer { margin-top:3rem; text-align:center; font-size:0.9rem; color:#777; borde
     overflow-y: auto;
   }
   nav.open { left: 0; }
-
   .mobile-nav-toggle {
     display: block;
     position: fixed;
@@ -90,22 +76,19 @@ footer { margin-top:3rem; text-align:center; font-size:0.9rem; color:#777; borde
     font-size:1.5rem;
     cursor: pointer;
   }
-
   main { margin-left:0; padding:1.5rem; }
 }
 </style>
 </head>
 <body>
-
-<div class="mobile-nav-toggle">☰</div>
-
+<div class="mobile-nav-toggle">Menu</div>
 <nav>
   <div class="logo">
     <img src="assets/ghost.png" alt="Ghost Slots Logo" class="logo-img">
     Ghost Slots
   </div>
   <ul>
-    <li><span class="category-toggle">Server Rules ▾</span>
+    <li><span class="category-toggle">Server Rules Down Arrow</span>
       <ul>
         <li><a class="tablink active" data-tab="welcome">Get Started</a></li>
         <li><a class="tablink" data-tab="r-c">Respect & Conduct</a></li>
@@ -115,14 +98,14 @@ footer { margin-top:3rem; text-align:center; font-size:0.9rem; color:#777; borde
         <li><a class="tablink" data-tab="final-notes">Final Notes</a></li>
       </ul>
     </li>
-    <li><span class="category-toggle">Slot Terms ▾</span>
+    <li><span class="category-toggle">Slot Terms Down Arrow</span>
       <ul>
         <li><a class="tablink" data-tab="promotions-pings">Promotions, Pings & Selling</a></li>
         <li><a class="tablink" data-tab="general-terms">General Terms</a></li>
         <li><a class="tablink" data-tab="slot-guidelines">Slot Management Guidelines</a></li>
       </ul>
     </li>
-    <li><span class="category-toggle">Other Terms ▾</span>
+    <li><span class="category-toggle">Other Terms Down Arrow</span>
       <ul>
         <li><a class="tablink" data-tab="partnership">Partnership Terms & Conditions</a></li>
         <li><a class="tablink" data-tab="external">External Terms</a></li>
@@ -136,20 +119,16 @@ footer { margin-top:3rem; text-align:center; font-size:0.9rem; color:#777; borde
 <div class="content-wrapper">
 <div class="search-bar"><input type="text" placeholder="Search through terms..." /></div>
 
+<!-- ==================== SERVER RULES ==================== -->
+
 <!-- GET STARTED -->
 <section id="welcome" class="tab active">
 <header><h1>Welcome To Ghost’s Slots</h1></header>
-
 <p>What is Ghost’s Slots?</p>
-
 <p>We launched on October 12, 2025, as a truly cross‑platform marketplace dedicated to helping creators and entrepreneurs sell digital products with confidence. Built on a foundation of security and transparency, our platform ensures every trade between buyer and seller is protected from start to finish.</p>
-
 <p>While Discord remains our flagship channel, Ghost’s Slots modular architecture lets us integrate with multiple platforms—so you can reach customers wherever they are. With rapid growth and continuous innovation, we’re not just another single‑channel marketplace; we’re redefining how digital goods are discovered, bought, and sold across the entire online ecosystem.</p>
-
 <p><strong>We offer a diverse lineup of flexible plans—each one crafted to empower you to list, market, and sell your digital products seamlessly on our platform :</strong></p>
-
 <p class="shadow-text"><strong>By joining our server you automatically agree to the server rules and by buying a slot you automatically agree to the slot terms.</strong></p>
-
 <a class="btn nav-btn" data-tab="r-c">NEXT → Respect & Conduct</a>
 </section>
 
@@ -184,7 +163,266 @@ footer { margin-top:3rem; text-align:center; font-size:0.9rem; color:#777; borde
 <a class="btn nav-btn" data-tab="r-c">← BACK</a>
 </section>
 
-<!-- Remaining sections omitted for brevity, but keep them unchanged -->
+<!-- PROMOTIONS & SELLING (SERVER RULES) -->
+<section id="promotions" class="tab">
+<header><h1>Promotions & Selling</h1></header>
+
+<div class="category">Advertising Restrictions</div>
+<div class="bullet">No unsolicited advertising on other Discord servers, Telegram channels, social media, or any external site via our server channels.</div>
+<div class="bullet">Do not post invite links, referral codes, or promotional banners in our server channels.</div>
+<div class="bullet">Spamming mass‑mentions or @everyone/@here for promotions is strictly prohibited.</div>
+
+<div class="category">Verified Sellers Only</div>
+<div class="bullet">Only users with a verified “slot holder” status may offer services or list products for sale.</div>
+<div class="bullet">To become verified, complete our onboarding and identity‑verification process.</div>
+
+<div class="category">No DM‑Based Solicitation</div>
+<div class="bullet">Directly messaging members to pitch services, divert tickets, or funnel users to external platforms is forbidden.</div>
+<div class="bullet">All offers must be made in the designated slot channels only.</div>
+
+<div class="category">External Redirects Banned</div>
+<div class="bullet">You may not redirect users to your own Discord server, Telegram, website, or any other third‑party platform for sales or support.</div>
+<div class="bullet">Violations will lead to immediate suspension of selling privileges and potential server ban.</div>
+
+<div class="category">Giveaway & Rewards</div>
+<div class="bullet"><strong>Giveaway Rewards:</strong> All giveaway rewards for events must be claimed within one hour of the event's conclusion, unless the host decides otherwise.</div>
+<div class="bullet"><strong>Non‑Transferable Rewards:</strong> Rewards are strictly non‑transferable and cannot be exchanged, redeemed for cash, or assigned to any other individual.</div>
+<div class="bullet"><strong>Requirements:</strong> Rewards are only given if the requirements are fulfilled (may be specified during or after the giveaway).</div>
+<div class="bullet"><strong>Eligibility Verification:</strong> Participants must provide valid proof of eligibility; failure may result in disqualification.</div>
+
+<div class="category">Affiliate & Referral Links</div>
+<div class="bullet">Affiliate or referral links are only allowed if pre‑approved by staff and confined to the affiliate‑program channel.</div>
+<div class="bullet">Any undisclosed or deceptive use of referral links will result in penalties.</div>
+
+<div class="category">Transparency & Disclosure</div>
+<div class="bullet">All listings must clearly state pricing, deliverables, and any additional fees up front.</div>
+<div class="bullet">Your terms of service should not contradict your advertisement (e.g., selling a 30‑day product with a 7‑day warranty is not allowed).</div>
+
+<div class="category">Prohibited Promotions</div>
+<div class="bullet">No pyramid schemes, MLM solicitations, or get‑rich‑quick scams.</div>
+<div class="bullet">Illegal content—pirated software, unauthorized copyrighted material, or illicit services—is strictly forbidden.</div>
+
+<div class="category">Compliance & Conduct</div>
+<div class="bullet">Adhere to Discord’s Terms of Service and all applicable laws in your promotions.</div>
+<div class="bullet">Harassment, threats, or intimidation used to coerce sales or persuade users is zero‑tolerance.</div>
+
+<div class="category">Consequences</div>
+<div class="bullet">First offense: formal warning and temporary mute from promotion channels.</div>
+<div class="bullet">Repeat violations: loss of verification, removal of selling privileges, and permanent ban.</div>
+
+<a class="btn nav-btn" data-tab="server-service">NEXT → Server & Service Rules</a>
+<a class="btn nav-btn" data-tab="payment">← BACK</a>
+</section>
+
+<!-- SERVER & SERVICE RULES -->
+<section id="server-service" class="tab">
+<header><h1>Server & Service Rules</h1></header>
+
+<div class="category">No Cloning or Copying</div>
+<div class="bullet">Replicating any aspect of our server—its UI/UX design, bot commands, message formatting, emojis, or terminology—is prohibited.</div>
+<div class="bullet">Offenders will be permanently banned and publicly exposed.</div>
+
+<div class="category">Service at Our Discretion</div>
+<div class="bullet">We reserve the absolute right to refuse, suspend, or terminate service to any user at any time, without explanation or prior notice.</div>
+
+<div class="category">Zero Tolerance for Manipulation</div>
+<div class="bullet">Any attempt to bait, manipulate, or deceive staff—including false reports, staged disputes, or “drama bait”—will result in immediate loss of access and a permanent ban.</div>
+
+<div class="category">Impersonation & Unauthorized Access</div>
+<div class="bullet">Impersonating staff, admins, bots, or other users is strictly forbidden.</div>
+<div class="bullet">Do not share or misuse permissioned commands, audit logs, or private channels. Violations incur immediate suspension.</div>
+
+<div class="category">Security & Vulnerability Disclosure</div>
+<div class="bullet">If you discover a security flaw or bug, report it privately via a support ticket.</div>
+<div class="bullet">Public disclosure, exploit attempts, or proof‑of‑concept demos without authorization will lead to legal action.</div>
+
+<div class="category">Approved Bot & Automation Usage</div>
+<div class="bullet">Only staff‑approved bots and integrations may be added or used.</div>
+<div class="bullet">Scripting, auto‑clickers, or scraping tools are prohibited and will be removed along with their operators.</div>
+
+<div class="category">Confidentiality of Internal Communications</div>
+<div class="bullet">Do not share screenshots, transcripts, download links, or any private discussions outside the server without explicit staff approval.</div>
+<div class="bullet">Breaches will face disciplinary measures.</div>
+
+<div class="category">Server Termination</div>
+<div class="bullet">If our server gets termed, all slot owners have a maximum of 48 hours to join back and recover their slot, otherwise the slot is lost and will not be returned until a new purchase.</div>
+
+<div class="category">Maintenance & Downtime Notifications</div>
+<div class="bullet">Scheduled maintenance windows, downtime, or updates will be announced in advance.</div>
+<div class="bullet">Do not DM staff for status updates—refer to #announcements for real‑time information.</div>
+
+<div class="category">Feedback & Feature Requests</div>
+<div class="bullet">Submit all feedback, suggestions, or bug reports through the #feedback channel or via our support ticket system.</div>
+<div class="bullet">Public bickering over platform decisions is discouraged.</div>
+
+<div class="category">Compliance & Enforcement</div>
+<div class="bullet">All users must abide by these rules, as well as Discord’s Terms of Service and our Privacy Policy.</div>
+<div class="bullet">Repeated or severe infractions may result in warnings, mutes, temporary suspensions, or permanent bans.</div>
+
+<a class="btn nav-btn" data-tab="final-notes">NEXT → Final Notes</a>
+<a class="btn nav-btn" data-tab="promotions">← BACK</a>
+</section>
+
+<!-- FINAL NOTES (GENERAL USAGE, ENFORCEMENT, etc.) -->
+<section id="final-notes" class="tab">
+<header><h1>Final Notes</h1></header>
+
+<div class="category">General Usage</div>
+<div class="bullet"><strong>Non‑transferable Slots:</strong> You may not sell, gift, or assign your slot to anyone else.</div>
+<div class="bullet"><strong>No Alternate Accounts:</strong> Creating or using “alt” accounts to acquire extra slots or evade bans is forbidden.</div>
+<div class="bullet"><strong>Blacklist Restriction:</strong> Blacklisted users are ineligible to purchase or retain slots.</div>
+<div class="bullet"><strong>Final Payments:</strong> All slot fees are final—no refunds under any circumstance.</div>
+<div class="bullet"><strong>Underpayment Policy:</strong> Slots will be adjusted proportionally to the amount paid and remain suspended until any outstanding balance is cleared.</div>
+<div class="bullet"><strong>Rejoin Requirement:</strong> Exiting the server without rejoining within 48 hours automatically forfeits your slot.</div>
+
+<div class="category">Enforcement & Penalties</div>
+<div class="bullet"><strong>Possible Sanctions:</strong> Slot revocation, monetary fines, downgrades, temporary suspensions, blacklisting from Ghost Slots and its affiliates.</div>
+<div class="bullet"><strong>Staff Authority:</strong> Staff may impose any penalty—without notice or explanation—on users exhibiting suspicious, abusive, or rule‑breaking behavior.</div>
+
+<div class="category">Deal Terms & Middleman (MM) Usage</div>
+<div class="bullet"><strong>MM Always Available:</strong> Buyers may request a middleman for any transaction; sellers must comply.</div>
+<div class="bullet"><strong>No Exemptions:</strong> “Auto‑buy only” or low‑value excuses are not valid reasons to skip MM.</div>
+<div class="bullet"><strong>Immediate Penalties:</strong> Refusing Ghost Slots’s Auto MM or ScammerAlert service incurs instant sanctions.</div>
+
+<div class="category">Anti‑Scam & Blacklists</div>
+<div class="bullet"><strong>Zero Tolerance:</strong> Scamming or collaborating with scammers results in immediate slot revocation.</div>
+<div class="bullet"><strong>Affiliate Enforcement:</strong> Being flagged “Deal With Caution” or banned in a trusted affiliate server can cost you your slot—regardless of dispute resolution.</div>
+<div class="bullet"><strong>Overstocking & Misadvertising:</strong> Overproducing, overselling, misadvertising, or listing more keys than you have in stock is strictly prohibited. Any such activity may result in immediate slot revocation without warning.</div>
+
+<div class="category">Reports & Investigations</div>
+<div class="bullet"><strong>Report Freeze:</strong> Any open report will suspend your slot’s visibility and activity.</div>
+<div class="bullet"><strong>12‑Hour Response:</strong> You have 12 hours to address a report; failure to respond triggers automatic slot revocation.</div>
+<div class="bullet"><strong>Multiple Reports Risk:</strong> Accumulating three valid reports—even if overturned later—puts your slot at risk of removal.</div>
+
+<a class="btn nav-btn" data-tab="promotions-pings">NEXT → Slot Terms → Promotions, Pings & Selling</a>
+<a class="btn nav-btn" data-tab="server-service">← BACK</a>
+</section>
+
+<!-- ==================== SLOT TERMS ==================== -->
+
+<!-- PROMOTIONS, PINGS & SELLING (SLOT) -->
+<section id="promotions-pings" class="tab">
+<header><h1>Promotions, Pings & Selling (Slot Terms)</h1></header>
+
+<div class="category">Advertising & Redirects</div>
+<div class="bullet">No Unsolicited DM Promotions: Pitching services via direct messages or steering users to external servers (Discord, Telegram, websites) is strictly prohibited.</div>
+<div class="bullet">Server Invite Sharing: You may only share your server link when a buyer explicitly requests it—no proactive posting.</div>
+<div class="bullet">Clean Previews: Remove or blur all external links in your product samples.</div>
+<div class="bullet">Honest Content: Present only original, approved material; using stolen, AI‑generated, or deceptive previews without clear disclosure is forbidden.</div>
+
+<div class="category">Autobuy Policy</div>
+<div class="bullet">Instant Fulfillment: All autobuy integrations must guarantee immediate delivery upon purchase.</div>
+<div class="bullet">No Stock Misrepresentation: Claims like “DM to receive” or bait‑and‑switch tactics are strictly banned.</div>
+<div class="bullet">Accurate Listings: Any false availability or misleading previews will result in immediate slot revocation.</div>
+
+<div class="category">Ping & Activity Rules</div>
+<div class="bullet">Daily Reset: Ping allowances reset each day at 12 AM GMT.</div>
+<div class="bullet">Respect Your Limits: Exceeding your ping quota or misusing mentions (e.g., @everyone/@here) triggers automatic restrictions.</div>
+<div class="bullet">No Spamming: Flooding channels with duplicate messages or remaining inactive for more than 3 days without valid reason risks slot loss.</div>
+<div class="bullet">Inactivity: Staying inactive on your slot for 7 days means direct revoke of your slot.</div>
+
+<a class="btn nav-btn" data-tab="general-terms">NEXT → General Terms</a>
+<a class="btn nav-btn" data-tab="final-notes">← BACK</a>
+</section>
+
+<!-- GENERAL TERMS (SLOT) -->
+<section id="general-terms" class="tab">
+<header><h1>General Terms (Slot)</h1></header>
+
+<div class="category">Transparency & Quality</div>
+<div class="bullet">Clear Listings: Disclose all product details, pricing, and deliverables up front.</div>
+<div class="bullet">No False Advertising: Upselling tactics or misleading claims are not allowed.</div>
+<div class="bullet">Proof Retention: Keep records of all transactions (e.g., ticket transcripts) for verification.</div>
+
+<div class="category">Final Provisions</div>
+<div class="bullet">Binding Agreement: Purchasing a slot signifies your acceptance of these guidelines.</div>
+<div class="bullet">Rule Updates: These rules may change at any time; major revisions may include a 24‑hour grace period.</div>
+<div class="bullet">Final Authority: All staff decisions regarding placement, enforcement, or revocation are conclusive and not subject to external appeal.</div>
+
+<a class="btn nav-btn" data-tab="slot-guidelines">NEXT → Slot Management Guidelines</a>
+<a class="btn nav-btn" data-tab="promotions-pings">← BACK</a>
+</section>
+
+<!-- SLOT MANAGEMENT GUIDELINES -->
+<section id="slot-guidelines" class="tab">
+<header><h1>Slot Management Guidelines</h1></header>
+
+<div class="category">Slot Positioning</div>
+<div class="bullet">Dynamic Placement: Higher‑tier slots receive more prominent placement, but all positions remain subject to change at staff discretion.</div>
+
+<div class="category">Slot Recovery & Migration</div>
+<div class="bullet">Rejoin Window: After any migration, you must rejoin via our backup link within 7 days or your slot will be revoked.</div>
+<div class="bullet">Transfer Requirements: To transfer a slot, submit either your original TicketTool transcript or your unique slot recovery key.</div>
+<div class="bullet">Loss Of Transcript: Loss of transcript means you can no longer access your slot unless our support team agrees upon certain requirements.</div>
+<div class="bullet">Loss Of Key:<br>
+  • $5 for lifetime slots<br>
+  • $10 for positioned/Category 1 slots<br>
+  • $2 (weekly) / $3 (monthly) key loss fee applies respectively
+</div>
+
+<a class="btn nav-btn" data-tab="partnership">NEXT → Partnership Terms</a>
+<a class="btn nav-btn" data-tab="general-terms">← BACK</a>
+</section>
+
+<!-- ==================== OTHER TERMS ==================== -->
+
+<!-- PARTNERSHIP -->
+<section id="partnership" class="tab">
+<header><h1>Partnership Terms & Conditions</h1></header>
+<div class="bullet">Details regarding affiliate programs, revenue shares, and co‑marketing agreements will be outlined in separate contracts.</div>
+<div class="bullet">All partnerships require prior approval from Ghost Slots administration.</div>
+<a class="btn nav-btn" data-tab="external">NEXT → External Terms</a>
+<a class="btn nav-btn" data-tab="slot-guidelines">← BACK</a>
+</section>
+
+<!-- EXTERNAL -->
+<section id="external" class="tab">
+<header><h1>External Terms</h1></header>
+<div class="bullet">Use of third‑party services (e.g. PayPal, Discord, Autobuy systems) is subject to their respective Terms of Service.</div>
+<div class="bullet">Ghost Slots is not liable for external platform downtime, policy changes, or account suspensions.</div>
+<a class="btn nav-btn" data-tab="punishment">NEXT → Punishment & Violation</a>
+<a class="btn nav-btn" data-tab="partnership">← BACK</a>
+</section>
+
+<!-- PUNISHMENT & VIOLATION -->
+<section id="punishment" class="tab">
+<header><h1>Punishment & Violation</h1></header>
+
+<div class="category">Verbal Warning</div>
+<div class="bullet">Issued for first‑time or minor infractions (e.g., off‑topic posts, minor etiquette slips).</div>
+
+<div class="category">Temporary Restrictions</div>
+<div class="bullet">Mute from chat channels or loss of posting privileges for 24–72 hours for repeated minor offenses or medium‑severity breaches (e.g., unsolicited DMs, light spam).</div>
+
+<div class="category">Suspension</div>
+<div class="bullet">Temporary ban from the server (3–7 days) for serious rule violations, including:</div>
+<div class="bullet">• Continued harassment or toxic behavior after warning</div>
+<div class="bullet">• Attempting to manipulate staff or game the dispute process</div>
+<div class="bullet">• Unauthorized copying or cloning of server assets</div>
+
+<div class="category">Permanent Ban</div>
+<div class="bullet">Immediate, irrevocable removal for the most severe offenses, such as:</div>
+<div class="bullet">• Doxxing, threats of hacking, or leaking private information</div>
+<div class="bullet">• Fraudulent chargebacks, payment disputes, or financial scams</div>
+<div class="bullet">• Impersonation of staff, admins, or bots</div>
+<div class="bullet">• Public exposure of internal discussions or audit logs</div>
+
+<div class="category">Blacklist from Marketplace</div>
+<div class="bullet">Loss of all selling privileges, escrow access, and promotional rights.</div>
+<div class="bullet">Blacklisted users cannot create new listings or participate in transactions.</div>
+
+<div class="category">Escalation & Legal Referral</div>
+<div class="bullet">Cases involving illegal activities (e.g., distributing malware, facilitating illicit trade, severe harassment) will be documented and referred to law enforcement or payment networks as required.</div>
+
+<div class="category">Public Disclosure</div>
+<div class="bullet">In instances of major fraud or repeated violations, the offender’s username and offense summary may be posted in the server’s #offenses log for community awareness.</div>
+
+<div class="category">Appeals Process</div>
+<div class="bullet">If you believe a punishment was issued in error, submit an appeal via a support ticket within 24 hours.</div>
+<div class="bullet">Appeals will be reviewed by senior staff; decisions are final.</div>
+
+<a class="btn nav-btn" data-tab="welcome">← BACK TO START</a>
+</section>
 
 <footer>2025 © Ghost Slots</footer>
 </div>
@@ -198,29 +436,35 @@ const categoryToggles=document.querySelectorAll(".category-toggle");
 const mobileToggle=document.querySelector(".mobile-nav-toggle");
 const nav=document.querySelector("nav");
 
-function switchTab(tabId,push=true){
-  tabs.forEach(t=>t.classList.remove("active"));
-  const tab=document.getElementById(tabId);
-  if(tab) tab.classList.add("active");
-  links.forEach(l=>l.classList.remove("active"));
-  const activeLink=Array.from(links).find(l=>l.dataset.tab===tabId);
-  if(activeLink) activeLink.classList.add("active");
-  categoryToggles.forEach(cat=>{
-    const ul=cat.nextElementSibling;
-    if(ul.contains(activeLink)) cat.parentElement.classList.add("open");
-    else cat.parentElement.classList.remove("open");
+function switchTab(tabId, push = true) {
+  tabs.forEach(t => t.classList.remove("active"));
+  const tab = document.getElementById(tabId);
+  if (tab) tab.classList.add("active");
+
+  links.forEach(l => l.classList.remove("active"));
+  const activeLink = Array.from(links).find(l => l.dataset.tab === tabId);
+  if (activeLink) activeLink.classList.add("active");
+
+  categoryToggles.forEach(cat => {
+    const ul = cat.nextElementSibling;
+    if (ul && ul.contains(activeLink)) {
+      cat.parentElement.classList.add("open");
+    } else {
+      cat.parentElement.classList.remove("open");
+    }
   });
-  if(push) history.pushState({tab:tabId},"",`#${tabId}`);
-  if(window.innerWidth<700) nav.classList.remove("open");
+
+  if (push) history.pushState({ tab: tabId }, "", `#${tabId}`);
+  if (window.innerWidth < 700) nav.classList.remove("open");
 }
 
-links.forEach(link=>link.addEventListener("click",()=>switchTab(link.dataset.tab)));
-navBtns.forEach(btn=>btn.addEventListener("click",()=>switchTab(btn.dataset.tab)));
-categoryToggles.forEach(cat=>cat.addEventListener("click",()=>cat.parentElement.classList.toggle("open")));
-mobileToggle.addEventListener("click",()=>nav.classList.toggle("open"));
-window.addEventListener("popstate",e=>{if(e.state&&e.state.tab)switchTab(e.state.tab,false);});
-history.replaceState({tab:"welcome"},"","#welcome");
+links.forEach(link => link.addEventListener("click", e => { e.preventDefault(); switchTab(link.dataset.tab); }));
+navBtns.forEach(btn => btn.addEventListener("click", e => { e.preventDefault(); switchTab(btn.dataset.tab); }));
+categoryToggles.forEach(cat => cat.addEventListener("click", () => cat.parentElement.classList.toggle("open")));
+mobileToggle.addEventListener("click", () => nav.classList.toggle("open"));
+
+window.addEventListener("popstate", e => { if (e.state && e.state.tab) switchTab(e.state.tab, false); });
+history.replaceState({ tab: "welcome" }, "", "#welcome");
 </script>
 </body>
 </html>
-
